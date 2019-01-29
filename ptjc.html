@@ -1,0 +1,214 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 29 Jan 2019 09:50:43 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.12
+Content-Length: 5620
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<title>作业帮WebView API</title>
+<style>
+li{
+margin:10px;
+}
+</style>
+</head>
+<body>
+<h2>外部吊起app</h2>
+<ol>
+<li>
+webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengchao1">吊起</a>
+</li>
+</ol>
+<h2>内部吊起</h2>
+<ol>
+<li>
+获取公共参数common:  <button id="common">执行</button>
+</li>
+
+<li>
+判断是否登录isLogin:  <button id="is_login">isLogin</button>
+</li>
+
+<li>
+调用登录:  <button id="login">Login</button>
+</li>
+
+<li>
+jsOpenCourseList:<button id="jsOpenCourseList">jsOpenCourseList</button>
+</li>
+<li>
+显示一个toast:  <button id="toast">Toast</button>
+</li>
+
+<li>
+退出当前页面:  <button id="exit">Logout</button>
+</li>
+<li>
+邀请:  <button id="invite">Invite</button>
+</li>
+<li>
+分享:  <button id="share">Share</button>
+</li>
+<li>
+填写学校:  <button id="fill_school">执行</button>
+</li>
+<li>
+进入学校圈:  <button id="go_school">执行</button>
+</li>
+<li>
+填写地址:  <button id="address">执行</button>
+</li>
+<li>
+进入问题列表:  <button id="unsolved_questionlist">执行</button>
+</li>
+<li>
+进入我的物品:  <button id="my_gift">执行</button>
+</li>
+<li>
+进入刮刮卡:  <button id="scrape_card">执行</button>
+</li>
+<li>
+进入赚取刮刮卡:  <button id="earn_card">执行</button>
+</li>
+<li>
+进入萌图秀:  <button id="photo_show">执行</button>
+</li>
+<li>
+进入帖子页:  <button id="article">执行</button>
+</li>
+<li>
+振动:  <button id="vibrate">执行</button>
+</li>
+<li>
+统计打点:  <button id="stat">执行</button>
+</li>
+<li>
+获取地理位置:  <button id="getLocation">执行</button>
+</li>
+<li>
+打开新页面:  <button id="openWindow">执行</button>
+</li>
+
+</ol>
+<script>
+function HybridApi(){
+	var protocol = "iknowhybrid://";
+	var callbackCount = 0;
+	function createBridge(src){
+		var bridge = document.createElement("iframe");
+		bridge.setAttribute("style", "display:none;");
+		bridge.setAttribute("height","0px");
+		bridge.setAttribute("width","0px");
+		bridge.setAttribute("frameborder","0");
+		document.documentElement.appendChild(bridge);
+		return bridge;
+	}
+	//action必填，其他的选填
+	function buildUrl(action,params,callback){
+		var url = protocol+action+"?";
+		url+="data="+encodeURIComponent(JSON.stringify(params||{}));
+		if(callback){
+			var callbackName = "__cb__"+callbackCount++;
+			window[callbackName] = function(){
+				callback && callback.apply(window,arguments);
+			}
+			url += "&__callback__="+callbackName;
+		}
+		return url;
+	}
+	this.exec = function(action,params,callback){
+		var bridge = createBridge();
+		bridge.setAttribute('src',buildUrl(action,params,callback));
+		setTimeout(function(){
+				bridge.parentNode.removeChild(bridge);
+				bridge = null;
+				},0);
+	}
+}
+var hybridApi = new HybridApi();
+document.querySelector("#jsOpenCourseList").onclick = function(){
+	hybridApi.exec("goToSeasonClass",{subjectId:3,showFilter:true,seasonId:2,gradeId:20,title:"语文长期班课%……&3333"});
+}
+document.querySelector("#toast").onclick = function(){
+	hybridApi.exec("toast",{text:"hello"});
+}
+document.querySelector("#login").onclick = function(){
+	hybridApi.exec("login");
+}
+document.querySelector("#exit").onclick = function(){
+	hybridApi.exec("exit");
+}
+document.querySelector("#is_login").onclick = function(){
+	hybridApi.exec("is_login",{},function(result){
+			hybridApi.exec("toast",{text:result.isLogin+""});
+			});
+}
+document.querySelector("#vibrate").onclick = function(){
+	hybridApi.exec("vibrate");
+}
+document.querySelector("#invite").onclick = function(){
+	hybridApi.exec("invite");
+}
+document.querySelector("#share").onclick = function(){
+	hybridApi.exec("share",{share_text:"这是分享的文字",share_text_weibo:"这是缀在分享文字后给微博额外添加的文字",share_img:"",share_url:"http://wapiknow.baidu.com"});
+}
+document.querySelector("#address").onclick = function(){
+	window.onSubmitSuccess = function(){
+		hybridApi.exec("toast",{text:"地址提交成功"});
+	}
+	hybridApi.exec("address",{address_id:5});
+}
+document.querySelector("#unsolved_questionlist").onclick = function(){
+	hybridApi.exec("unsolved_questionlist");
+}
+document.querySelector("#fill_school").onclick = function(){
+	window.setSchool = function(schoolName){
+		hybridApi.exec("toast",{text:schoolName});
+	}
+	hybridApi.exec("fill_school");
+}
+document.querySelector("#go_school").onclick = function(){
+	hybridApi.exec("go_school");
+}
+document.querySelector("#my_gift").onclick = function(){
+	hybridApi.exec("my_gift");
+}
+document.querySelector("#earn_card").onclick = function(){
+	hybridApi.exec("earn_card");
+}
+document.querySelector("#scrape_card").onclick = function(){
+	hybridApi.exec("scrape_card");
+}
+document.querySelector("#photo_show").onclick = function(){
+	hybridApi.exec("photo_show");
+}
+document.querySelector("#article").onclick = function(){
+	hybridApi.exec("article",{article_qid:"adfsdfdsf"});
+}
+document.querySelector("#stat").onclick = function(){
+	hybridApi.exec("stat",{action:"JS_XXXX",params:{key1:"key2",key2:"key2"}});
+}
+document.querySelector("#getLocation").onclick = function(){
+	hybridApi.exec("getLocation",{},function(res){
+			alert(JSON.stringify(res));
+			});
+}
+document.querySelector("#openWindow").onclick = function(){
+	hybridApi.exec("openWindow",{url:"http://www.hao123.com"});
+}
+document.querySelector("#common").onclick = function(){
+	hybridApi.exec("common",{},function(params){
+			alert(params.cuid);
+			});
+}
+</script>
+</body>
+</html>
+
