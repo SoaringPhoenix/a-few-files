@@ -1,4 +1,4 @@
-HTTP/1.1 200 OK
+<!-- HTTP/1.1 200 OK
 Server: nginx
 Date: Tue, 29 Jan 2019 09:50:43 GMT
 Content-Type: text/html; charset=UTF-8
@@ -7,12 +7,14 @@ Vary: Accept-Encoding
 X-Powered-By: PHP/5.6.12
 Content-Length: 5620
 
-<!DOCTYPE html>
+ -->
+ <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="UTF-8">
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
-<title>作业帮WebView API</title>
+<title>平台基础action调试</title>
+<!-- <script type="text/javascript" src="D:\chrome_download\vConsole-3.1.0\dist\vconsole.min.js"></script> -->
 <style>
 li{
 margin:10px;
@@ -21,11 +23,12 @@ margin:10px;
 </head>
 <body>
 <h2>外部吊起app</h2>
+
 <ol>
 <li>
 webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengchao1">吊起</a>
 </li>
-</ol>
+</ol> 
 <h2>内部吊起</h2>
 <ol>
 <li>
@@ -41,7 +44,7 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 </li>
 
 <li>
-只返回登陆状态loginForResult:  <button id="loginForResult">执行</button>
+调起登陆，并返回登陆状态loginForResult:  <button id="loginForResult">执行</button>
 </li>
 
 <li>
@@ -386,6 +389,7 @@ feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isSho
 </ol>
 
 <script>
+
 function HybridApi(){
 	var protocol = "iknowhybrid://";
 	var callbackCount = 0;
@@ -421,23 +425,100 @@ function HybridApi(){
 	}
 }
 var hybridApi = new HybridApi();
-document.querySelector("#jsOpenCourseList").onclick = function(){
-	hybridApi.exec("goToSeasonClass",{subjectId:3,showFilter:true,seasonId:2,gradeId:20,title:"语文长期班课%……&3333"});
+// var vConsole = new VConsole();
+
+
+document.querySelector("#common").onclick = function(){
+	hybridApi.exec("common",{},function(params){
+			alert(JSON.stringify(params));
+			});
 }
-document.querySelector("#toast").onclick = function(){
-	hybridApi.exec("toast",{text:"hello"});
-}
-document.querySelector("#login").onclick = function(){
-	hybridApi.exec("login");
-}
-document.querySelector("#exit").onclick = function(){
-	hybridApi.exec("exit");
-}
+
 document.querySelector("#is_login").onclick = function(){
 	hybridApi.exec("is_login",{},function(result){
 			hybridApi.exec("toast",{text:result.isLogin+""});
 			});
 }
+
+document.querySelector("#login").onclick = function(){
+	hybridApi.exec("login");
+}
+
+document.querySelector('#loginForResult').onclick = function() {
+	hybridApi.exec(
+		'loginForResult',
+		{},
+		function(result) {
+	 	alert(JSON.stringify(result));
+	 }
+	);
+}
+
+document.querySelector('#getuserinfo').onclick = function() {
+	hybridApi.exec (
+		'getuserinfo',
+		{},
+		function(result) {
+			alert(JSON.stringify(result));
+		}
+		);
+}
+
+// document.querySelector("#openWindow").onclick = function() {
+// 	hybridApi.exec(
+// 		"openWindow",
+// 		{
+// 			url:"http://www.hao123.com",
+// 			hideNav: '1',
+// 			// dialogTitle: "跳转到hao123",
+// 			// dialogSubtitle: '跳转',
+// 			// dialogLeftText: '左边',
+// 			// dialogRightText: '右边',
+// 			// dialogCloseBtn: '关闭'
+// 		},
+// 		function(result) {
+// 			alert(JSON.stringify(result));
+// 		},
+// 		);
+// }
+document.querySelector("#exit").onclick = function(){
+	hybridApi.exec("exit");
+}
+
+// document.querySelector('#playVideo').onclick = function() {
+// 	hybridApi.exec(
+// 		'playVideo',
+// 		{
+// 			playUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
+// 			playType: '1',
+// 			tid: '100',
+// 			from: 'search',
+// 			title: '播放视频',
+// 			linkUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
+// 			srcType: 1,
+// 			landscape: true,
+// 			rateType: true,
+// 			encryption: '1',
+// 			assignPlayPosition : 0,
+// 		},
+// 		);
+// }
+
+document.querySelector("#toast").onclick = function(){
+	hybridApi.exec("toast",{text:"这工作真他妈傻逼"});
+}
+document.querySelector('#dial').onclick = function() {
+	hybridApi.exec('dial', {phone:"18804627884"});
+}
+document.querySelector('#copyToClipboard').onclick = function() {
+	hybridApi.exec('copyToClipboard', 
+		{
+			content: "复制我",
+			hint: "成功了",
+		}
+		);
+}
+
 document.querySelector("#vibrate").onclick = function(){
 	hybridApi.exec("vibrate");
 }
@@ -462,9 +543,9 @@ document.querySelector("#fill_school").onclick = function(){
 	}
 	hybridApi.exec("fill_school");
 }
-document.querySelector("#go_school").onclick = function(){
-	hybridApi.exec("go_school");
-}
+// document.querySelector("#go_school").onclick = function(){
+// 	hybridApi.exec("go_school");
+// }
 document.querySelector("#my_gift").onclick = function(){
 	hybridApi.exec("my_gift");
 }
@@ -474,28 +555,22 @@ document.querySelector("#earn_card").onclick = function(){
 document.querySelector("#scrape_card").onclick = function(){
 	hybridApi.exec("scrape_card");
 }
-document.querySelector("#photo_show").onclick = function(){
-	hybridApi.exec("photo_show");
-}
+// document.querySelector("#photo_show").onclick = function(){
+// 	hybridApi.exec("photo_show");
+// }
 document.querySelector("#article").onclick = function(){
 	hybridApi.exec("article",{article_qid:"adfsdfdsf"});
 }
-document.querySelector("#stat").onclick = function(){
-	hybridApi.exec("stat",{action:"JS_XXXX",params:{key1:"key2",key2:"key2"}});
-}
+// document.querySelector("#stat").onclick = function(){
+// 	hybridApi.exec("stat",{action:"JS_XXXX",params:{key1:"key2",key2:"key2"}});
+// }
 document.querySelector("#getLocation").onclick = function(){
 	hybridApi.exec("getLocation",{},function(res){
 			alert(JSON.stringify(res));
 			});
 }
-document.querySelector("#openWindow").onclick = function(){
-	hybridApi.exec("openWindow",{url:"http://www.hao123.com"});
-}
-document.querySelector("#common").onclick = function(){
-	hybridApi.exec("common",{},function(params){
-			alert(params.cuid);
-			});
-}
+
+
 </script>
 </body>
 </html>
