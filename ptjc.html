@@ -29,74 +29,362 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 <h2>内部吊起</h2>
 <ol>
 <li>
-获取公共参数common:  <button id="common">执行</button>
+*获取公共参数common:  <button id="common">执行</button>
 </li>
 
 <li>
-判断是否登录isLogin:  <button id="is_login">isLogin</button>
+*判断是否登录is_login:  <button id="is_login">执行</button>
 </li>
 
 <li>
-调用登录:  <button id="login">Login</button>
+调用登录login:  <button id="login">执行</button>
 </li>
 
 <li>
-jsOpenCourseList:<button id="jsOpenCourseList">jsOpenCourseList</button>
+只返回登陆状态loginForResult:  <button id="loginForResult">执行</button>
 </li>
+
+<li>
+获取用户信息getuserinfo:  <button id="getuserinfo">执行</button>
+</li>
+
+<li>
+打开新页面openWindow:  <button id="openWindow">执行</button>
+</li>
+
+<li>
+退出当前页面exit:  <button id="exit">执行</button>
+</li>
+
+<li>
+播放视频playVideo:  <button id="playVideo">执行</button>
+</li>
+
+<li>
+播放视频移动网络提示playVideoHint:  <button id="playVideoHint">执行</button>
+</li>
+
 <li>
 显示一个toast:  <button id="toast">Toast</button>
 </li>
 
 <li>
-退出当前页面:  <button id="exit">Logout</button>
+拨打电话dial:  <button id="dial">执行</button>
 </li>
+
 <li>
-邀请:  <button id="invite">Invite</button>
+复制到剪切板copyToClipboard:  <button id="copyToClipboard">执行</button>
 </li>
+
 <li>
 分享:  <button id="share">Share</button>
 </li>
+
 <li>
-填写学校:  <button id="fill_school">执行</button>
-</li>
-<li>
-进入学校圈:  <button id="go_school">执行</button>
-</li>
-<li>
-填写地址:  <button id="address">执行</button>
-</li>
-<li>
-进入问题列表:  <button id="unsolved_questionlist">执行</button>
-</li>
-<li>
-进入我的物品:  <button id="my_gift">执行</button>
-</li>
-<li>
-进入刮刮卡:  <button id="scrape_card">执行</button>
-</li>
-<li>
-进入赚取刮刮卡:  <button id="earn_card">执行</button>
-</li>
-<li>
-进入萌图秀:  <button id="photo_show">执行</button>
-</li>
-<li>
-进入帖子页:  <button id="article">执行</button>
-</li>
-<li>
-振动:  <button id="vibrate">执行</button>
-</li>
-<li>
-统计打点:  <button id="stat">执行</button>
-</li>
-<li>
-获取地理位置:  <button id="getLocation">执行</button>
-</li>
-<li>
-打开新页面:  <button id="openWindow">执行</button>
+展示web页大图showWebPicture:  <button id="showWebPicture">执行</button>
 </li>
 
+<li>
+打开相机openCamera:  <button id="openCamera">执行</button>
+</li>
+
+<li>
+webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</button>
+</li>
+
+<li>
+跳转Activity统一action startActivity:  <button id="startActivity">执行</button>
+</li>
+
+<li>
+页面缩放动作开始searchResultZoomStart:  <button id="searchResultZoomStart">执行</button>
+</li>
+
+<li>
+下载多媒体数据（图片，视频，音乐，文档，通用）downloadMedia:  <button id="downloadMedia">执行</button>
+</li>
+
+<li>
+ 调用Vibrator vibrate<button id="vibrate">执行</button>
+</li>
+
+<li>
+ 调用邀请对话框 invite<button id="invite">执行</button>
+</li>
+
+<li>
+ 进入填写地址详情页面，如果填写成功，将会返回RESULT_OK address<button id="address">执行</button>
+</li>
+
+<li>
+进入待解决列表页面 unsolved_questionlist<button id="unsolved_questionlist">执行</button>
+</li>
+
+<li>
+进入填学校页面 fill_school<button id="fill_school">执行</button>
+</li>
+
+<li>
+我的物品页 my_gift<button id="my_gift">执行</button>
+</li>
+
+<li>
+开始刮卡 scrape_card<button id="scrape_card">执行</button>
+</li>
+
+<li>
+赚刮刮卡 earn_card<button id="earn_card">执行</button>
+</li>
+
+<li>
+进入帖子页 article<button id="article">执行</button>
+</li>
+
+<li>
+进入商城 mall_home<button id="mall_home">执行</button>
+</li>
+
+<li>
+进入中考密卷 midtest<button id="midtest">执行</button>
+</li>
+
+<li>
+获取地理位置 getLocation<button id="getLocation">执行</button>
+</li>
+
+<li>
+在检索结果页面的webview显示UGC入口 ugc<button id="ugc">执行</button>
+</li>
+
+<li>
+收藏本加载更多 loadmore<button id="loadmore">执行</button>
+</li>
+
+<li>
+收藏本空回调 loadempty<button id="loadempty">执行</button>
+</li>
+
+<li>
+检索结果页获取巩固练习数量 exerciseCnt<button id="exerciseCnt">执行</button>
+</li>
+
+<li>
+SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledgeCard">执行</button>
+</li>
+
+<li>
+英语单元作文中拼完作文素材到得到完整的一篇作文，更新文章详情页的rightbutton showComposition<button id="showComposition">执行</button>
+</li>
+
+<li>
+英文单元作文详情首页返回到作文列表 backCompositionList<button id="backCompositionList">执行</button>
+</li>
+
+<li>
+文言文全文及译文页面点击跳转到更多词义页面 backToClassicalMoreMeaningPage<button id="backToClassicalMoreMeaningPage">执行</button>
+</li>
+
+<li>
+调用Native登录操作,使用于邦邦商城 loginMall<button id="loginMall">执行</button>
+</li>
+
+<li>
+获取webview位置 webviewIndex<button id="webviewIndex">执行</button>
+</li>
+
+<li>
+检索结果导流打点 universalLaunchPage<button id="universalLaunchPage">执行</button>
+</li>
+
+<li>
+获取sid getSid<button id="getSid">执行</button>
+</li>
+
+<li>
+猜你想拍二期 feedback<button id="feedback">执行</button>
+</li>
+
+<li>
+下载笔迹数据解析成JSON传给fe downLoadPenData<button id="downLoadPenData">执行</button>
+</li>
+
+<li>
+跳转EvaluationActivity goEvaluation<button id="goEvaluation">执行</button>
+</li>
+
+<li>
+调微博分享文字接口，用于"话题" weiboShare<button id="weiboShare">执行</button>
+</li>
+
+<li>
+视频回放页菜单弹出 playbackMenu<button id="playbackMenu">执行</button>
+</li>
+
+<li>
+升级检测 updateCheck<button id="updateCheck">执行</button>
+</li>
+
+<li>
+作文大赛投稿的action contributeComposition<button id="contributeComposition">执行</button>
+</li>
+
+<li>
+作文大赛出书的action publishComposition<button id="publishComposition">执行</button>
+</li>
+
+<li>
+作文大赛投稿时完善个人信息 completeInfo<button id="completeInfo">执行</button>
+</li>
+
+<li>
+文言文背诵控制录音按钮显示 reciteRecordVoiceButtonShow<button id="reciteRecordVoiceButtonShow">执行</button>
+</li>
+
+<li>
+跳转到优惠券的页面 goToCouponList<button id="goToCouponList">执行</button>
+</li>
+
+<li>
+添加日历提醒 AddToCalendarWebAction<button id="AddToCalendarWebAction">执行</button>
+</li>
+
+<li>
+黑珍珠展示多图 showWebMultiPicture<button id="showWebMultiPicture">执行</button>
+</li>
+
+<li>
+隐藏输入法框 hideInput<button id="hideInput">执行</button>
+</li>
+
+<li>
+设置页面随输入法伸缩 setSoftInputResize<button id="setSoftInputResize">执行</button>
+</li>
+
+<li>
+调用手机自带浏览器 打开网页 openWebPager<button id="openWebPager">执行</button>
+</li>
+
+<li>
+排行榜显示右上角按钮 rankInfo<button id="rankInfo">执行</button>
+</li>
+
+<li>
+跳转到套餐列表页面 tutorpack<button id="tutorpack">执行</button>
+</li>
+
+<li>
+显示跳转投诉的对话框 faqShowComplaint<button id="faqShowComplaint">执行</button>
+</li>
+
+<li>
+显示联系我们对话框 faqShowContactUs<button id="faqShowContactUs">执行</button>
+</li>
+
+<li>
+显示ufo反馈界面 <button id="faqShowUfo">执行</button>
+</li>
+
+<li>
+为h5运营提供的拍照或从图库取一个图片上传 cameraUpload<button id="cameraUpload">执行</button>
+</li>
+
+<li>
+打开原生浏览器 openBrowser<button id="openBrowser">执行</button>
+</li>
+
+<li>
+跳转到个人信息界面 goToPersonalInfor<button id="goToPersonalInfor">执行</button>
+</li>
+
+<li>
+跳转到称号修改页面 goToUserTitleAction<button id="goToUserTitleAction">执行</button>
+</li>
+
+<li>
+跳转到用户资料修改页面 goToUserProfile<button id="goToUserProfile">执行</button>
+</li>
+
+<li>
+是否展示webActivity的分享按钮 show_share<button id="show_share">执行</button>
+</li>
+
+<li>
+打开缓存列表 openCachelist<button id="openCachelist">执行</button>
+</li>
+
+<li>
+跳转到平台通用支付页 platformPay<button id="platformPay">执行</button>
+</li>
+
+<li>
+打开游戏WebActivity openGameWindow<button id="openGameWindow">执行</button>
+</li>
+
+<li>
+打开游戏奖励弹窗 openGameRewardBox<button id="openGameRewardBox">执行</button>
+</li>
+
+<li>
+通用跳转 APPJumpProtocol<button id="APPJumpProtocol">执行</button>
+</li>
+
+<li>
+转人工客服 openOnlineService<button id="openOnlineService">执行</button>
+</li>
+
+<li>
+广告点击功能根据btype内部跳转、外部跳转、下载等 commonClick<button id="commonClick">执行</button>
+</li>
+
+<li>
+知识宇宙 跳转到首页 universeKnowledgeHome<button id="universeKnowledgeHome">执行</button>
+</li>
+
+<li>
+知识宇宙 跳转到专辑列表页 universeKnowledgeAlbum<button id="universeKnowledgeAlbum">执行</button>
+</li>
+
+<li>
+知识宇宙 跳转到播放页面 universeKnowledgePlayFM<button id="universeKnowledgePlayFM">执行</button>
+</li>
+
+<li>
+调用Native登录操作 reLoginDialog<button id="reLoginDialog">执行</button>
+</li>
+
+<li>
+滑动退出滑动冲突上报冲突控件 slidingExitState<button id="slidingExitState">执行</button>
+</li>
+
+<li>
+feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isShowVideosInArticle">执行</button>
+</li>
+
+<li>
+是否禁止back键（只能用于WebActivity中） forbidBack<button id="forbidBack">执行</button>
+</li>
+
+<li>
+跳转到搜索题目详情页 goSearchResult<button id="goSearchResult">执行</button>
+</li>
+
+<li>
+打开机器人聊天页面 openRobotChat<button id="openRobotChat">执行</button>
+</li>
+
+<li>
+跳转到绑定手机号页面 goBindPhone<button id="goBindPhone">执行</button>
+</li>
+
+<!-- <li>
+ <button id="">执行</button>
+</li>
+
+<li>
+ <button id="">执行</button>
+</li> -->
 </ol>
+
 <script>
 function HybridApi(){
 	var protocol = "iknowhybrid://";
