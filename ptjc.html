@@ -80,7 +80,7 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 </li>
 
 <li>
-分享:  <button id="share">Share</button>
+分享: share <button id="share">Share</button>
 </li>
 
 <li>
@@ -88,7 +88,7 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 </li>
 
 <li>
-打开相机openCamera:  <button id="openCamera">执行</button>
+去拍题 openCamera:  <button id="openCamera">执行</button>
 </li>
 
 <li>
@@ -136,19 +136,7 @@ webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</butt
 </li>
 
 <li>
-赚刮刮卡 earn_card<button id="earn_card">执行</button>
-</li>
-
-<li>
-进入帖子页 article<button id="article">执行</button>
-</li>
-
-<li>
-进入商城 mall_home<button id="mall_home">执行</button>
-</li>
-
-<li>
-进入中考密卷 midtest<button id="midtest">执行</button>
+进入帮帮商城 mall_home<button id="mall_home">执行</button>
 </li>
 
 <li>
@@ -156,7 +144,7 @@ webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</butt
 </li>
 
 <li>
-在检索结果页面的webview显示UGC入口 ugc<button id="ugc">执行</button>
+在检索结果页面的webview显示问学霸入口 ugc<button id="ugc">执行</button>
 </li>
 
 <li>
@@ -165,10 +153,6 @@ webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</butt
 
 <li>
 收藏本空回调 loadempty<button id="loadempty">执行</button>
-</li>
-
-<li>
-检索结果页获取巩固练习数量 exerciseCnt<button id="exerciseCnt">执行</button>
 </li>
 
 <li>
@@ -192,15 +176,7 @@ SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledge
 </li>
 
 <li>
-获取webview位置 webviewIndex<button id="webviewIndex">执行</button>
-</li>
-
-<li>
 检索结果导流打点 universalLaunchPage<button id="universalLaunchPage">执行</button>
-</li>
-
-<li>
-获取sid getSid<button id="getSid">执行</button>
 </li>
 
 <li>
@@ -235,9 +211,7 @@ SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledge
 作文大赛出书的action publishComposition<button id="publishComposition">执行</button>
 </li>
 
-<li>
-作文大赛投稿时完善个人信息 completeInfo<button id="completeInfo">执行</button>
-</li>
+
 
 <li>
 文言文背诵控制录音按钮显示 reciteRecordVoiceButtonShow<button id="reciteRecordVoiceButtonShow">执行</button>
@@ -284,7 +258,7 @@ SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledge
 </li>
 
 <li>
-显示ufo反馈界面 <button id="faqShowUfo">执行</button>
+显示ufo反馈界面 faqShowUfo<button id="faqShowUfo">执行</button>
 </li>
 
 <li>
@@ -429,13 +403,17 @@ var hybridApi = new HybridApi();
 
 
 document.querySelector("#common").onclick = function(){
-	hybridApi.exec("common",{},function(params){
+	hybridApi.exec("common",
+		{},
+		function(params){
 			alert(JSON.stringify(params));
 			});
 }
 
 document.querySelector("#is_login").onclick = function(){
-	hybridApi.exec("is_login",{},function(result){
+	hybridApi.exec("is_login",
+		{},
+		function(result){
 			hybridApi.exec("toast",{text:result.isLogin+""});
 			});
 }
@@ -445,8 +423,7 @@ document.querySelector("#login").onclick = function(){
 }
 
 document.querySelector('#loginForResult').onclick = function() {
-	hybridApi.exec(
-		'loginForResult',
+	hybridApi.exec('loginForResult',
 		{},
 		function(result) {
 	 	alert(JSON.stringify(result));
@@ -455,8 +432,7 @@ document.querySelector('#loginForResult').onclick = function() {
 }
 
 document.querySelector('#getuserinfo').onclick = function() {
-	hybridApi.exec (
-		'getuserinfo',
+	hybridApi.exec ('getuserinfo',
 		{},
 		function(result) {
 			alert(JSON.stringify(result));
@@ -464,52 +440,50 @@ document.querySelector('#getuserinfo').onclick = function() {
 		);
 }
 
-// document.querySelector("#openWindow").onclick = function() {
-// 	hybridApi.exec(
-// 		"openWindow",
-// 		{
-// 			url:"http://www.hao123.com",
-// 			hideNav: '1',
-// 			// dialogTitle: "跳转到hao123",
-// 			// dialogSubtitle: '跳转',
-// 			// dialogLeftText: '左边',
-// 			// dialogRightText: '右边',
-// 			// dialogCloseBtn: '关闭'
-// 		},
-// 		function(result) {
-// 			alert(JSON.stringify(result));
-// 		},
-// 		);
-// }
+document.querySelector("#openWindow").onclick = function() {
+	hybridApi.exec("openWindow",
+		{
+			url:"http://www.hao123.com",
+			hideNav: '1',
+			dialogTitle: "退出hao123",
+			dialogSubtitle: '退出',
+			dialogLeftText: '取消',
+			dialogRightText: '确定',
+			dialogCloseBtn: '关闭'
+		}
+		);
+}
 document.querySelector("#exit").onclick = function(){
 	hybridApi.exec("exit");
 }
 
-// document.querySelector('#playVideo').onclick = function() {
-// 	hybridApi.exec(
-// 		'playVideo',
-// 		{
-// 			playUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
-// 			playType: '1',
-// 			tid: '100',
-// 			from: 'search',
-// 			title: '播放视频',
-// 			linkUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
-// 			srcType: 1,
-// 			landscape: true,
-// 			rateType: true,
-// 			encryption: '1',
-// 			assignPlayPosition : 0,
-// 		},
-// 		);
-// }
+document.querySelector('#playVideo').onclick = function() {
+	hybridApi.exec('playVideo',
+		{
+			// playUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
+			playUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+			playType: '1',
+			tid: '100',
+			from: 'search',
+			title: '播放视频',
+			linkUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+			srcType: 1,
+			landscape: true,
+			rateType: true,
+			encryption: '1',
+			assignPlayPosition : 0
+		}
+		);
+}
 
 document.querySelector("#toast").onclick = function(){
 	hybridApi.exec("toast",{text:"这工作真他妈傻逼"});
 }
+
 document.querySelector('#dial').onclick = function() {
 	hybridApi.exec('dial', {phone:"18804627884"});
 }
+
 document.querySelector('#copyToClipboard').onclick = function() {
 	hybridApi.exec('copyToClipboard', 
 		{
@@ -519,58 +493,390 @@ document.querySelector('#copyToClipboard').onclick = function() {
 		);
 }
 
+document.querySelector("#share").onclick = function(){
+	hybridApi.exec("share",
+		{
+			share_text:"我是分享文字，不服么",
+			share_text_weibo:"这是缀在分享文字后给微博额外添加的文字",
+			share_img:"https://yy-s.zuoyebang.cc/static/drawbook/theme/booklist5-up.png",
+			share_url:"http://wapiknow.baidu.com"
+		},
+		function(result) {
+			alert(JSON.stringify(result));
+		}
+		);
+}
+
+document.querySelector('#showWebPicture').onclick = function() {
+	hybridApi.exec('showWebPicture',
+		{
+			imageUrl: 'https://yy-s.zuoyebang.cc/static/drawbook/theme/booklist5-up.png',
+			isSave: 1,
+			isFinish: 0
+		}
+		);
+}
+
+document.querySelector('#openCamera').onclick = function() {
+	hybridApi.exec('openCamera');
+}
+
+document.querySelector('#swapBack').onclick = function() {
+	var enabled = false;
+	hybridApi.exec('swapBack',
+		{
+			enabled: enabled
+		}
+		);
+	var text = '已开启web页面右滑返回';
+	if (!enabled) {
+		text = '已禁止web页面右滑返回';
+	}
+	hybridApi.exec('toast',{text: text});
+}
+
+// document.querySelector('#startActivity').onclick = function() {
+// 	hybridApi.exec('startActivity',
+// 		{intent:});
+// }
+
+// document.querySelector('#searchResultZoomStart').onclick = function() {
+// 	hybridApi.exec('searchResultZoomStart',
+// 		);
+// }
+
+document.querySelector('#downloadMedia').onclick = function() {
+	hybridApi.exec('downloadMedia',
+	{
+		url: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+		// url: 'https://yy-s.zuoyebang.cc/static/drawbook/theme/booklist7-up.png',
+		type: 3
+	}
+		);
+	}
+	
 document.querySelector("#vibrate").onclick = function(){
-	hybridApi.exec("vibrate");
+	hybridApi.exec("vibrate",
+		{
+			vibrate_repeat: -1,
+			vibrate_pattern: [0,500]
+		}
+		);
 }
 document.querySelector("#invite").onclick = function(){
-	hybridApi.exec("invite");
+	hybridApi.exec("invite",
+		{
+			invite_url: 'http://qatest18.suanshubang.com/activity/donation/index',
+			invite_text: '欢迎来百度',
+			invite_title: '我是标题'
+		});
 }
-document.querySelector("#share").onclick = function(){
-	hybridApi.exec("share",{share_text:"这是分享的文字",share_text_weibo:"这是缀在分享文字后给微博额外添加的文字",share_img:"",share_url:"http://wapiknow.baidu.com"});
-}
-document.querySelector("#address").onclick = function(){
-	window.onSubmitSuccess = function(){
-		hybridApi.exec("toast",{text:"地址提交成功"});
-	}
-	hybridApi.exec("address",{address_id:5});
-}
+
+// document.querySelector("#address").onclick = function(){
+// 	// window.onSubmitSuccess = function(){
+// 	// 	hybridApi.exec("toast",{text:"地址提交成功"});
+// 	// }
+// 	hybridApi.exec("address",
+// 		{address_id:0},
+// 		function(res) 
+// 		{
+// 			alert(JSON.stringify(res));
+// 		});
+// }
+
 document.querySelector("#unsolved_questionlist").onclick = function(){
 	hybridApi.exec("unsolved_questionlist");
 }
+
 document.querySelector("#fill_school").onclick = function(){
 	window.setSchool = function(schoolName){
 		hybridApi.exec("toast",{text:schoolName});
 	}
 	hybridApi.exec("fill_school");
 }
-// document.querySelector("#go_school").onclick = function(){
-// 	hybridApi.exec("go_school");
-// }
+
 document.querySelector("#my_gift").onclick = function(){
 	hybridApi.exec("my_gift");
 }
-document.querySelector("#earn_card").onclick = function(){
-	hybridApi.exec("earn_card");
-}
+
 document.querySelector("#scrape_card").onclick = function(){
 	hybridApi.exec("scrape_card");
 }
-// document.querySelector("#photo_show").onclick = function(){
-// 	hybridApi.exec("photo_show");
-// }
-document.querySelector("#article").onclick = function(){
-	hybridApi.exec("article",{article_qid:"adfsdfdsf"});
+
+document.querySelector('#mall_home').onclick = function() {
+	hybridApi.exec('mall_home');
 }
-// document.querySelector("#stat").onclick = function(){
-// 	hybridApi.exec("stat",{action:"JS_XXXX",params:{key1:"key2",key2:"key2"}});
-// }
+
 document.querySelector("#getLocation").onclick = function(){
-	hybridApi.exec("getLocation",{},function(res){
+	hybridApi.exec("getLocation",
+		{},
+		function(res){
 			alert(JSON.stringify(res));
 			});
 }
 
+document.querySelector('#ugc').onclick = function() {
+	hybridApi.exec('ugc');
+	hybridApi.exec('toast', {text:'已成功设置'});
+}
 
+document.querySelector('#loadmore').onclick = function() {
+	hybridApi.exec('loadmore',{id: 20});
+	hybridApi.exec('toast', {text:'已成功加载至第20条数据'});
+}
+
+document.querySelector('#loadempty').onclick = function() {
+	hybridApi.exec('loadempty');
+		hybridApi.exec('toast', {text:'已成功执行收藏空回调'});
+}
+
+document.querySelector('#knowledgeCard').onclick = function() {
+	hybridApi.exec('knowledgeCard',
+		{
+			title: '知识卡',
+			pointId: '1c0f808df54c61726c4865905db37907'
+		});
+}
+
+document.querySelector('#showComposition').onclick = function() {
+	hybridApi.exec('showComposition',
+		{
+			composition_content: '我是作文内容',
+			composition_summary: '我是作文摘要',
+		});
+	hybridApi.exec('toast', {text: '已成功更新'});
+}
+
+document.querySelector('#backCompositionList').onclick = function() {
+	hybridApi.exec('backCompositionList');
+	hybridApi.exec('toast', {text: '执行成功'});
+}
+
+document.querySelector('#backToClassicalMoreMeaningPage').onclick = function() {
+	hybridApi.exec('backToClassicalMoreMeaningPage',{word:'木兰诗'});
+}
+
+document.querySelector('#loginMall').onclick = function() {
+	hybridApi.exec('loginMall');
+}
+
+document.querySelector('#universalLaunchPage').onclick = function() {
+	hybridApi.exec('universalLaunchPage',
+		{
+			pageName: "检索结果页",
+			launchNow: true,
+			params: [1,2]
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#feedback').onclick = function() {
+	hybridApi.exec('feedback', 
+		{
+			feedback_channel: 1308, 
+			faq_channel: 1309
+		});
+}
+
+document.querySelector('#downLoadPenData').onclick = function() {
+	hybridApi.exec('downLoadPenData',
+		{
+			url: 'http://qatest18.suanshubang.com'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#goEvaluation').onclick = function() {
+	hybridApi.exec('goEvaluation',
+		{
+			service_id: '1',
+			teacher_id: '1',
+		});
+}
+
+document.querySelector('#weiboShare').onclick = function() {
+	hybridApi.exec('weiboShare', 
+		{
+			content: '我是内容'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#playbackMenu').onclick = function() {
+	hybridApi.exec('platbackMenu',
+		{
+			isShare: true,
+			isEvaluation: false,
+			isFeedback: false,
+			shareTitle: '我是分享标题',
+			shareContent: '我是分享内容',
+			shareWeiboContent: '我是微博分享内容',
+			shareUrl: 'http://qatest18.suanshubang.com/activity/donation/index'
+		});
+alert('这个action太复杂，参数是对的，没结果');
+}
+
+document.querySelector('#updateCheck').onclick = function() {
+	hybridApi.exec('updateCheck',{},function(res) {
+		alert(JSON.stringify(res));
+	});
+}
+
+document.querySelector('#contributeComposition').onclick = function() {
+	hybridApi.exec('contributeComposition',
+		{
+			composition_type: 1
+		});
+}
+
+document.querySelector('#publishComposition').onclick = function() {
+	hybridApi.exec('publishComposition',
+		{
+			composition_id: '1'
+		});
+}
+
+document.querySelector('#reciteRecordVoiceButtonShow').onclick = function() {
+	var ran = Math.floor(Math.random() * 10 + 1);
+	var status = true;
+	if (ran > 5) {
+		status = false;
+	}
+	hybridApi.exec('reciteRecordVoiceButtonShow', {show: status});
+	if (status) {
+		alert('展示按钮');
+	}
+	else {
+		alert('不展示按钮');
+	}
+}
+
+document.querySelector('#goToCouponList').onclick = function() {
+	hybridApi.exec('goToCouponList');
+}
+
+document.querySelector('#AddToCalendarWebAction').onclick = function() {
+	hybridApi.exec('AddToCalendarWebAction',
+		{},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#showWebMultiPicture').onclick = function() {
+	hybridApi.exec('showWebMultiPicture',
+		{
+			imageUrlArr: [
+			'https://www.zybang.com/static/drawbook/scene/1-1.png',
+			'https://www.zybang.com/static/drawbook/scene/1-2.png'],
+			from: '你程大爷',
+			index: 0
+		});
+}
+
+document.querySelector('#hideInput').onclick = function() {
+	hybridApi.exec('hideInput');
+	alert('隐藏输入法框成功');
+}
+
+document.querySelector('#setSoftInputResize').onclick = function() {
+	hybridApi.exec('setSoftInputResize');
+	alert('设置页面随输入法伸缩成功');
+}
+
+document.querySelector('#openWebPager').onclick = function() {
+	hybridApi.exec('openWebPager', {url:'http://www.baidu.com'});
+}
+
+document.querySelector('#rankInfo').onclick = function() {
+	hybridApi.exec('rankInfo', {info: '我是你爸爸'});
+}
+
+document.querySelector('#tutorpack').onclick = function() {
+	hybridApi.exec('tutorpack', {from: '来自你爸爸', isClose: 1});
+}
+
+document.querySelector('#faqShowComplaint').onclick = function() {
+	hybridApi.exec('faqShowComplaint');
+}
+
+document.querySelector('#faqShowContactUs').onclick = function() {
+	hybridApi.exec('faqShowContactUs');
+}
+
+document.querySelector('#faqShowUfo').onclick = function() {
+	hybridApi.exec('faqShowUfo', 
+		{
+			feedbackChannel: 1,
+			faqChannel: 1,
+			type: 0
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#cameraUpload').onclick = function() {
+	hybridApi.exec('cameraUpload',
+		{type: 0},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#openBrowser').onclick = function() {
+	hybridApi.exec('openBrowser', {url: 'http://www.4399.com'});
+}
+
+document.querySelector('#goToPersonalInfor').onclick = function() {
+	hybridApi.exec('goToPersonalInfor');
+}
+
+document.querySelector('#goToUserTitleAction').onclick = function() {
+	hybridApi.exec('goToUserTitleAction');
+}
+
+document.querySelector('#goToUserProfile').onclick = function() {
+	hybridApi.exec('goToUserProfile');
+}
+
+document.querySelector('#show_share').onclick = function() {
+	hybridApi.exec('show_share',
+		{
+			is_share: true,
+			share_title: '我是你标题爸爸',
+			share_text: '我是你内容爸爸',
+			share_text_weibo: '我是你微博内容爸爸',
+			share_img: 'https://www.zybang.com/static/drawbook/scene/1-2.png',
+			share_url: 'http://qatest18.suanshubang.com/activity/donation/index',
+			share_origin: '来自你爸爸',
+			share_type: [0,1,2,3]
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector("#openCachelist").onclick = function() {
+	hybridApi.exec('openCachelist');
+}
+
+document.querySelector("#platformPay").onclick = function() {
+	hybridApi.exec('platformPay',
+		{
+			serviceId: 5,
+			itemId: 1
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
 </script>
 </body>
 </html>
