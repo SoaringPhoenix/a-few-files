@@ -32,11 +32,11 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 <h2>内部吊起</h2>
 <ol>
 <li>
-*获取公共参数common:  <button id="common">执行</button>
+获取公共参数common:  <button id="common">执行</button>
 </li>
 
 <li>
-*判断是否登录is_login:  <button id="is_login">执行</button>
+判断是否登录is_login:  <button id="is_login">执行</button>
 </li>
 
 <li>
@@ -95,13 +95,13 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</button>
 </li>
 
-<li>
-跳转Activity统一action startActivity:  <button id="startActivity">执行</button>
-</li>
+<!-- <li>
+*跳转Activity统一action startActivity:  <button id="startActivity">执行</button>
+</li> -->
 
-<li>
-页面缩放动作开始searchResultZoomStart:  <button id="searchResultZoomStart">执行</button>
-</li>
+<!-- <li>
+*页面缩放动作开始searchResultZoomStart:  <button id="searchResultZoomStart">执行</button>
+</li> -->
 
 <li>
 下载多媒体数据（图片，视频，音乐，文档，通用）downloadMedia:  <button id="downloadMedia">执行</button>
@@ -113,10 +113,6 @@ webActivity是否禁用手势返回swapBack:  <button id="swapBack">执行</butt
 
 <li>
  调用邀请对话框 invite<button id="invite">执行</button>
-</li>
-
-<li>
- 进入填写地址详情页面，如果填写成功，将会返回RESULT_OK address<button id="address">执行</button>
 </li>
 
 <li>
@@ -211,18 +207,12 @@ SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledge
 作文大赛出书的action publishComposition<button id="publishComposition">执行</button>
 </li>
 
-
-
 <li>
 文言文背诵控制录音按钮显示 reciteRecordVoiceButtonShow<button id="reciteRecordVoiceButtonShow">执行</button>
 </li>
 
 <li>
 跳转到优惠券的页面 goToCouponList<button id="goToCouponList">执行</button>
-</li>
-
-<li>
-添加日历提醒 AddToCalendarWebAction<button id="AddToCalendarWebAction">执行</button>
 </li>
 
 <li>
@@ -310,10 +300,6 @@ SearchResult页面跳到知识卡片的action knowledgeCard<button id="knowledge
 </li>
 
 <li>
-广告点击功能根据btype内部跳转、外部跳转、下载等 commonClick<button id="commonClick">执行</button>
-</li>
-
-<li>
 知识宇宙 跳转到首页 universeKnowledgeHome<button id="universeKnowledgeHome">执行</button>
 </li>
 
@@ -353,13 +339,106 @@ feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isSho
 跳转到绑定手机号页面 goBindPhone<button id="goBindPhone">执行</button>
 </li>
 
-<!-- <li>
- <button id="">执行</button>
+
+<li>
+跳转帮主开讲 jumpToBangZhu<button id="jumpToBangZhu">执行</button>
 </li>
 
 <li>
- <button id="">执行</button>
+调用Native绑定手机号操作 bindPhoneAlert<button id="bindPhoneAlert">执行</button>
+</li>
+
+<li>
+调用端上条形码扫描 barcodeScanning<button id='barcodeScanning'>执行</button>
+</li>
+
+<li>
+显示colorful的toast colorfulToast<button id='colorfulToast'>执行</button>
+</li>
+
+<li>
+退出课中测试页面返回课堂练习 exitToPlayer<button id='exitToPlayer'>执行</button>
+</li>
+
+<li>
+真题列表跳转openPresentationPaper<button id='openPresentationPaper'>执行</button>
+</li>
+
+<li>
+拍照搜题修改收藏状态changeCollection<button id='changeCollection'>执行</button>
+</li>
+
+<li>
+拍照搜题返回收藏id searchFavoriteResult<button id='searchFavoriteResult'>执行</button>
+</li>
+
+<li>
+跳转到个人主页jumpToUserCard<button id='jumpToUserCard'>执行</button>
+</li>
+
+<li>
+*跳转到阅读世界jumpReadWorld<button id='jumpReadWorld'>执行</button>
+</li>
+
+<li>
+跳转到搜索题目详情页 goSearchResult<button id='goSearchResult'>执行</button>
+</li>
+
+<li>
+跳转相似习题详情页goSimilarDetail<button id='goSimilarDetail'>执行</button>
+</li>
+
+<li>
+跳转相似习题列表forecastJumpSimilar<button id='forecastJumpSimilar'>执行</button>
+</li>
+
+<li>
+页面刷新通知postNotificationAction<button id='postNotificationAction'>执行</button>
+</li>
+
+<!-- <li>
+倍速播放器platformRTCVideo<button id='platformRTCVideo'>执行</button>
 </li> -->
+
+<li>
+*纯净播放器 playPureVideo<button id='playPureVideo'>执行</button>
+</li>
+
+<li>
+问题详情页questiondetail<button id='questiondetail'>执行</button>
+</li>
+
+<!-- <li>
+吊起知知识宇宙分享universeShowShare<button id='universeShowShare'>执行</button>
+</li>
+ -->
+<li>
+吊起知识宇宙专辑够买弹窗universeAlbumBuy<button id='universeAlbumBuy'>执行</button>
+</li>
+
+<!-- <li>
+questionCollectState<button id='questionCollectState'>执行</button>
+</li>
+ -->
+<li>
+nlog<button id='nlog'>执行</button>
+</li>
+
+<li>
+reportEntranceOldLogin<button id='reportEntranceOldLogin'>执行</button>
+</li>
+
+<li>
+查看新作业，关闭activity scanQRCode<button id='scanQRCode'>执行</button>
+</li>
+
+<li>
+查看新作业，解决完型填空上下分屏展示查看新作业的view newHomeworkRefreshUi<button id='newHomeworkRefreshUi'>执行</button>
+</li>
+
+<li>
+查看新作业，解决完型填空上下分屏展示查看新作业的view submitHomework<button id='submitHomework'>执行</button>
+</li>
 </ol>
 
 <script>
@@ -460,20 +539,27 @@ document.querySelector("#exit").onclick = function(){
 document.querySelector('#playVideo').onclick = function() {
 	hybridApi.exec('playVideo',
 		{
-			// playUrl: 'https://charge.zuoyebang.cc/knowledge_e194552d5b75bc53f6172c4c873cb599.mp4?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-11-08T08%3A08%3A21Z%2F2592000%2Fhost%2Fe862d3a7bdd4f4fd4729c1ec9b929de2ade2e169545187f0de3b3d3706ac618a',
 			playUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
 			playType: '1',
-			tid: '100',
-			from: 'search',
-			title: '播放视频',
-			linkUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
-			srcType: 1,
-			landscape: true,
-			rateType: true,
-			encryption: '1',
-			assignPlayPosition : 0
+			// tid: '367354808',
+			// from: 'search',
+			// title: '播放视频',
+			// linkUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+			// srcType: 1,
+			// landscape: true,
+			// rateType: true,
+			// encryption: '1',
+			// assignPlayPosition : 0
 		}
 		);
+}
+document.querySelector("#playVideoHint").onclick = function(){
+	hybridApi.exec("playVideoHint",
+		{
+			playUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+			playType: '1',
+			title: '播放视频',
+		});
 }
 
 document.querySelector("#toast").onclick = function(){
@@ -537,7 +623,17 @@ document.querySelector('#swapBack').onclick = function() {
 
 // document.querySelector('#startActivity').onclick = function() {
 // 	hybridApi.exec('startActivity',
-// 		{intent:});
+// 		{
+// 			intent: 'app://homework/mall/couponList'
+// 		},
+// 		function(res) {
+//           if(!res) {
+//             hybridApi.exec('openWindow', 
+//             {
+//             	url: 'app://homework/mall/couponList'
+//             });
+//         }
+//     });
 // }
 
 // document.querySelector('#searchResultZoomStart').onclick = function() {
@@ -571,18 +667,6 @@ document.querySelector("#invite").onclick = function(){
 			invite_title: '我是标题'
 		});
 }
-
-// document.querySelector("#address").onclick = function(){
-// 	// window.onSubmitSuccess = function(){
-// 	// 	hybridApi.exec("toast",{text:"地址提交成功"});
-// 	// }
-// 	hybridApi.exec("address",
-// 		{address_id:0},
-// 		function(res) 
-// 		{
-// 			alert(JSON.stringify(res));
-// 		});
-// }
 
 document.querySelector("#unsolved_questionlist").onclick = function(){
 	hybridApi.exec("unsolved_questionlist");
@@ -709,7 +793,7 @@ document.querySelector('#weiboShare').onclick = function() {
 }
 
 document.querySelector('#playbackMenu').onclick = function() {
-	hybridApi.exec('platbackMenu',
+	hybridApi.exec('playbackMenu',
 		{
 			isShare: true,
 			isEvaluation: false,
@@ -718,8 +802,11 @@ document.querySelector('#playbackMenu').onclick = function() {
 			shareContent: '我是分享内容',
 			shareWeiboContent: '我是微博分享内容',
 			shareUrl: 'http://qatest18.suanshubang.com/activity/donation/index'
+		},
+		function(res) {
+			alert(JSON.stringify(res));		
 		});
-alert('这个action太复杂，参数是对的，没结果');
+// alert('这个action太复杂，参数是对的，没结果');
 }
 
 document.querySelector('#updateCheck').onclick = function() {
@@ -761,14 +848,6 @@ document.querySelector('#goToCouponList').onclick = function() {
 	hybridApi.exec('goToCouponList');
 }
 
-document.querySelector('#AddToCalendarWebAction').onclick = function() {
-	hybridApi.exec('AddToCalendarWebAction',
-		{},
-		function(res) {
-			alert(JSON.stringify(res));
-		});
-}
-
 document.querySelector('#showWebMultiPicture').onclick = function() {
 	hybridApi.exec('showWebMultiPicture',
 		{
@@ -776,7 +855,7 @@ document.querySelector('#showWebMultiPicture').onclick = function() {
 			'https://www.zybang.com/static/drawbook/scene/1-1.png',
 			'https://www.zybang.com/static/drawbook/scene/1-2.png'],
 			from: '你程大爷',
-			index: 0
+			index: 0,
 		});
 }
 
@@ -870,13 +949,306 @@ document.querySelector("#openCachelist").onclick = function() {
 document.querySelector("#platformPay").onclick = function() {
 	hybridApi.exec('platformPay',
 		{
-			serviceId: 5,
+			serverId: 5,
 			itemId: 1
 		},
 		function(res) {
 			alert(JSON.stringify(res));
 		});
+	hybridApi.exec('toast', {text: '调不通的原因居然是action把serviceId写成了serverId.......'});
 }
+
+document.querySelector('#openGameWindow').onclick = function() {
+	hybridApi.exec('openGameWindow',
+		{
+			url: 'http://qatest18.suanshubang.com/activity/donation/index',
+			hideNav: 1,
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#openGameRewardBox').onclick = function() {
+	hybridApi.exec('openGameRewardBox',
+		{
+			gold: 10,
+			bangbang: 100,
+			point: 5,
+			prop: 3,
+			gift: 3,
+			itemId: 2,
+			num: 6,
+		});
+}
+
+document.querySelector("#APPJumpProtocol").onclick = function() {
+	hybridApi.exec('APPJumpProtocol',
+		{
+			protocolString: 'app://homework/mall/couponList'
+		});
+}
+
+document.querySelector('#openOnlineService').onclick = function() {
+	hybridApi.exec('openOnlineService',
+		{
+			description: '跳转online服务',
+			customer: '客户组',
+			title: '我是标题',
+			subtitle: '我是副标题',
+			pid: '我是Pid',
+			url: 'http://www.baidu.com',
+			messageSwitch: '0',
+		});
+}
+
+// document.querySelector('#commonClick').onclick = function() {
+// 	hybridApi.exec('commonClick');
+// }
+
+document.querySelector('#universeKnowledgeHome').onclick = function() {
+	hybridApi.exec('universeKnowledgeHome');
+}
+
+document.querySelector('#universeKnowledgeAlbum').onclick = function() {
+	hybridApi.exec('universeKnowledgeAlbum',{albumId: 1});
+}
+
+document.querySelector('#universeKnowledgePlayFM').onclick = function() {
+	hybridApi.exec('universeKnowledgePlayFM', {songId: 1});
+}
+
+document.querySelector('#reLoginDialog').onclick = function() {
+	hybridApi.exec('reLoginDialog', 
+		{
+			needCallBack: 1
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#slidingExitState').onclick = function() {
+	hybridApi.exec('slidingExitState',
+		{
+			state: 0
+		});
+	hybridApi.exec('toast', {text: '已禁止'});
+}
+
+document.querySelector('#isShowVideosInArticle').onclick  = function() {
+	hybridApi.exec('isShowVideosInArticle',
+		{
+			articleId: 1
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#forbidBack').onclick = function() {
+	hybridApi.exec('forbidBack');
+	hybridApi.exec('toast', {text: '已禁止物理键返回'});
+}
+
+document.querySelector('#goSearchResult').onclick = function() {
+	hybridApi.exec('goSearchResult',
+		{
+			sid: 'b96181e8d67fe3073ba2653524c6d1c3ba956842efae4b01',
+			query: '1加1等于几',
+			pid: 'http://img.zuoyebang.cc/zyb_34a887ac00026dcbf0bdef687179f95e.jpg',
+			width: 10,
+			height: 10,
+		});
+}
+
+document.querySelector('#openRobotChat').onclick = function() {
+	hybridApi.exec('openRobotChat',
+	 {
+	 	url: 'http://www.baidu.com'
+	 });
+}
+
+document.querySelector('#goBindPhone').onclick  = function() {
+	hybridApi.exec('goBindPhone',
+		{},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#jumpToBangZhu').onclick = function() {
+	hybridApi.exec('jumpToBangZhu',{index: 1});
+}
+
+document.querySelector('#bindPhoneAlert').onclick = function() {
+	hybridApi.exec('bindPhoneAlert',
+		{},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#barcodeScanning').onclick = function() {
+	hybridApi.exec('barcodeScanning');
+}
+
+document.querySelector('#colorfulToast').onclick = function() {
+	hybridApi.exec('colorfulToast', {text: '我是内容'});
+}
+
+
+document.querySelector('#exitToPlayer').onclick = function() {
+	hybridApi.exec('exitToPlayer');
+}
+
+document.querySelector('#openPresentationPaper').onclick = function() {
+	hybridApi.exec('openPresentationPaper',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+			type: 2
+		});
+}
+
+document.querySelector('#changeCollection').onclick = function() {
+	hybridApi.exec('changeCollection',
+		{
+			type: 1,
+			id: '261985436'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+	hybridApi.exec('toast', {text: '调用成功'});
+}
+
+document.querySelector('#searchFavoriteResult').onclick = function() {
+	hybridApi.exec('openPresentationPaper',
+		{},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+	hybridApi.exec('toast', {text: '调用成功'});
+}
+
+document.querySelector('#jumpToUserCard').onclick = function() {
+	hybridApi.exec('jumpToUserCard');
+}
+
+document.querySelector('#jumpReadWorld').onclick = function() {
+	hybridApi.exec('jumpReadWorld',{index: 1});
+}
+
+document.querySelector('#goSimilarDetail').onclick = function() {
+	hybridApi.exec('goSimilarDetail',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+			tid: '367354808',
+			index: 0
+		});
+}
+
+document.querySelector('#forecastJumpSimilar').onclick = function() {
+	hybridApi.exec('forecastJumpSimilar',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+			tid: '367354808'
+		});
+}
+
+document.querySelector('#postNotificationAction').onclick = function() {
+	hybridApi.exec('postNotificationAction',
+		{
+			postName: 'PlusVipPaySuccessNotification'
+		});
+		hybridApi.exec('toast', {text: '刷新成功'});
+}
+
+// document.querySelector('#platformRTCVideo').onclick = function() {
+// 	hybridApi.exec('platformRTCVideo',
+// 		{
+// 			url: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+// 			freeType: 1,
+// 			videoId: 284010863
+// 		});
+// }
+
+document.querySelector('#playPureVideo').onclick = function() {
+	hybridApi.exec('playPureVideo',
+		{
+			sourceUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+			videoName: 'test1',
+			videoPlayKey: 'i am key',
+			isEncryption: 'false',
+			from: 'search'
+		});
+}
+
+document.querySelector('#questiondetail').onclick = function() {
+	hybridApi.exec('questiondetail',
+		{
+			qid: '202080384'
+		});
+}
+
+// document.querySelector('#universeShowShare').onclick = function() {
+// 	hybridApi.exec('universeShowShare',
+// 		{
+// 			share_text: '我是分享内容',
+// 			share_url: 'http://qatest18.suanshubang.com/activity/donation/index',
+// 			share_img: 'https://yy-s.zuoyebang.cc/static/drawbook/theme/booklist5-up.png',
+// 			share_program: '帮帮公益',
+// 			program_path: 'http://qatest18.suanshubang.com/activity/vip/index'
+// 		});
+// }
+
+document.querySelector('#universeAlbumBuy').onclick = function() {
+	hybridApi.exec('universeAlbumBuy',
+		{
+			name: '我是名字',
+			originPrice: '30',
+			price: '15',
+			isPreSell: 0,
+			serviceId: 31,
+			itemId: 1
+		});
+}
+
+// document.querySelector('#questionCollectState').onclick = function() {
+// 	hybridApi.exec('questionCollectState',
+// 		{
+// 			type: 1,
+// 			tId: 338173507,
+// 			tIndex: 0,
+// 			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+// 			tCollectState: 0
+// 		});
+// }
+
+document.querySelector('#reportEntranceOldLogin').onclick = function() {
+	hybridApi.exec('reportEntranceOldLogin');
+}
+
+document.querySelector('#nlog').onclick = function() {
+	hybridApi.exec('nlog',
+		{
+			name: '测试1',
+			data: [1,2,3]
+		});
+}
+
+document.querySelector('#scanQRCode').onclick = function() {
+	hybridApi.exec('scanQRCode',
+		{
+			title: '我是标题',
+			describe: '我是描述'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+
 </script>
 </body>
 </html>
