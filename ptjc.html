@@ -68,7 +68,7 @@ webview吊起作业帮App:  <a href="askhomework://com.baidu.homework?from=fengc
 </li>
 
 <li>
-显示一个toast:  <button id="toast">Toast</button>
+显示一个toast:  <button id="toast">执行</button>
 </li>
 
 <li>
@@ -421,7 +421,7 @@ questionCollectState<button id='questionCollectState'>执行</button>
 </li>
  -->
 <li>
-nlog<button id='nlog'>执行</button>
+*nlog<button id='nlog'>执行</button>
 </li>
 
 <li>
@@ -514,8 +514,8 @@ fe日志action feLogcat<button id='feLogcat'>执行</button>
 
 <!-- <li>
  picSearchResultGuide<button id='picSearchResultGuide'>执行</button>
-</li> -->
-
+</li>
+ -->
 <!-- <li>
  getSid<button id='getSid'>执行</button>
 </li> -->
@@ -524,33 +524,33 @@ fe日志action feLogcat<button id='feLogcat'>执行</button>
 在fe页面增加投诉按钮 addFeedback<button id='addFeedback'>执行</button>
 </li>
 
-<!-- <li>
+<li>
 禁止/恢复端上页面随嵌套webview滚动的响应开关Action mixedPageWebviewNestedScrollEnable<button id='mixedPageWebviewNestedScrollEnable'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 显示我的客服按钮 faqShowUdeskEntry<button id='faqShowUdeskEntry'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 存储kv数据 memData<button id='memData'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 跳转到具体的试卷 openSpecificTestPaper<button id='openSpecificTestPaper'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 跳转到试卷首页 openTestPaperHomePage<button id='openTestPaperHomePage'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 拍照导流到文言文搜索结果页 goToClassicalChineseSearch<button id='goToClassicalChineseSearch'>执行</button>
-</li> -->
+</li>
 
-<!-- <li>
+<li>
 搜索结果无结果跳转到反馈页面 goToFeedback<button id='goToFeedback'>执行</button>
-</li> -->
+</li>
 
 </ol>
 
@@ -1558,9 +1558,13 @@ document.querySelector('#openAnswerPaperProcess').onclick = function() {
 // 		});
 // }
 
-document.querySelector('#picSearchResultGuide').onclick = function() {
-	hybridApi.exec('picSearchResultGuide');
-}
+// document.querySelector('#picSearchResultGuide').onclick = function() {
+// 	hybridApi.exec('picSearchResultGuide',
+// 		{},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
 
 // document.querySelector('#getSid').onclick = function() {
 // 	hybridApi.exec('getSid',
@@ -1577,38 +1581,63 @@ document.querySelector('#addFeedback').onclick = function() {
 		});
 }
 
-// document.querySelector('#memData').onclick = function() {
-// 	hybridApi.exec('memData',
-// 		{
-// 			op: 'set',
-// 			g: 'false',
-// 			k: 'key1'
-// 			v: 'value1'
-// 		},
-// 		function(res) {
-// 			alert(JSON.stringify(res));
-// 		});
-// }
+document.querySelector('#mixedPageWebviewNestedScrollEnable').onclick = function() {
+	var ran = Math.random(0, 1);
+	var enable = true;
+	var text = '已开启';
+	if (ran >= 0.5) {
+		enable = false;
+		text = '已禁用';
+	}
+	hybridApi.exec('mixedPageWebviewNestedScrollEnable',
+		{
+			enable: enable,
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+	hybridApi.exec('toast', {text: text});
+}
 
-// document.querySelector('#openSpecificTestPaper').onclick = function() {
-// 	hybridApi.exec('openSpecificTestPaper',
-// 		{
-// 			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
-// 			sourceId: 1
-// 		});
-// }
+document.querySelector('#faqShowUdeskEntry').onclick = function() {
+	hybridApi.exec('faqShowUdeskEntry',
+		{
+			udeskUrl: 'http://www.taobao.com',
+			udeskFrom: 'test'
+		});
+}
 
-// document.querySelector('#openTestPaperHomePage').onclick = function() {
-// 	hybridApi.exec('openTestPaperHomePage',
-// 		{});
-// }
+document.querySelector('#memData').onclick = function() {
+	hybridApi.exec('memData',
+		{
+			op: 'get',
+			g: 'false',
+			k: 'key1'
+			// v: 'value1'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
 
-// document.querySelector('#goToClassicalChineseSearch').onclick = function() {
-// 	hybridApi.exec('goToClassicalChineseSearch',
-// 		{
-// 			searchKeyWord: '口技'
-// 		});
-// }
+document.querySelector('#openSpecificTestPaper').onclick = function() {
+	hybridApi.exec('openSpecificTestPaper',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+			sourceId: 1
+		});
+}
+
+document.querySelector('#openTestPaperHomePage').onclick = function() {
+	hybridApi.exec('openTestPaperHomePage');
+}
+
+document.querySelector('#goToClassicalChineseSearch').onclick = function() {
+	hybridApi.exec('goToClassicalChineseSearch',
+		{
+			searchKeyWord: '口技'
+		});
+}
 
 // document.querySelector('#goToFeedback').onclick = function() {
 // 	hybridApi.exec('goToFeedback',
