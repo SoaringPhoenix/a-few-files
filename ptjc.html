@@ -429,16 +429,129 @@ reportEntranceOldLogin<button id='reportEntranceOldLogin'>执行</button>
 </li>
 
 <li>
-查看新作业，关闭activity scanQRCode<button id='scanQRCode'>执行</button>
+扫码回传给FE页面 scanQRCode<button id='scanQRCode'>执行</button>
 </li>
 
 <li>
-查看新作业，解决完型填空上下分屏展示查看新作业的view newHomeworkRefreshUi<button id='newHomeworkRefreshUi'>执行</button>
+*回答错误时通知客户端计时接口 notice<button id='notice'>执行</button>
 </li>
 
 <li>
-查看新作业，解决完型填空上下分屏展示查看新作业的view submitHomework<button id='submitHomework'>执行</button>
+练习中的跳转到下一页或者结果页,练习中的跳转到指定页 flipPage<button id='flipPage'>执行</button>
 </li>
+
+<li>
+通知用户的操作，选择了哪个答案 getPractiseResult<button id='getPractiseResult'>执行</button>
+</li>
+
+<li>
+在新页面打开一个WebActivity closeAndOpenWindow<button id='closeAndOpenWindow'>执行</button>
+</li>
+
+<li>
+新版错题本加载更多 collectionLoadMore<button id='collectionLoadMore'>执行</button>
+</li>
+
+<li>
+检索结果页获取巩固练习数量 exerciseCnt<button id='exerciseCnt'>执行</button>
+</li>
+
+<li>
+跳举一反三 learnByAnalogy<button id='learnByAnalogy'>执行</button>
+</li>
+
+<li>
+跳转到直播课的首页 goToLiveTab<button id='goToLiveTab'>执行</button>
+</li>
+
+<li>
+包月支付action tutorpay<button id='tutorpay'>执行</button>
+</li>
+
+<li>
+留言页面右上角显示详情页按钮 chatShowDetail<button id='chatShowDetail'>执行</button>
+</li>
+
+<li>
+申诉完成 completeAppeal<button id='completeAppeal'>执行</button>
+</li>
+
+<li>
+检索结果页pager滑动是否禁用 searchResultNativeScroll<button id='searchResultNativeScroll'>执行</button>
+</li>
+
+<li>
+微课跳转到试卷详情页 openTinyCoursePaper<button id='openTinyCoursePaper'>执行</button>
+</li>
+
+<li>
+微课测试包跳转到试卷详情页 openTinyCourseTestPaper<button id='openTinyCourseTestPaper'>执行</button>
+</li>
+
+<li>
+跳转到试卷详情页 openAnswerPaperProcess<button id='openAnswerPaperProcess'>执行</button>
+</li>
+
+<!-- <li>
+基础业务 习题本列表页，点击某道题跳转到题目详情页面 subjectDetail<button id='subjectDetail'>执行</button>
+</li> -->
+
+<!-- <li>
+基础业务 习题本列表页，点击某道题跳转到PDF预览下载页面 exportPdf<button id='exportPdf'>执行</button>
+</li> -->
+
+<!-- <li>
+fe日志action feLogcat<button id='feLogcat'>执行</button>
+</li>
+ -->
+<!-- <li>
+基础业务 习题本列表页，点击某道题跳转到题目详情页面 liveKeyBoardHideHeight<button id='liveKeyBoardHideHeight'>执行</button>
+</li> -->
+
+<!-- <li>
+基础业务 习题本列表页，点击某道题跳转到题目详情页面 webviewIndex<button id='webviewIndex'>执行</button>
+</li> -->
+
+<!-- <li>
+ picSearchResultGuide<button id='picSearchResultGuide'>执行</button>
+</li> -->
+
+<!-- <li>
+ getSid<button id='getSid'>执行</button>
+</li> -->
+
+<li>
+在fe页面增加投诉按钮 addFeedback<button id='addFeedback'>执行</button>
+</li>
+
+<!-- <li>
+禁止/恢复端上页面随嵌套webview滚动的响应开关Action mixedPageWebviewNestedScrollEnable<button id='mixedPageWebviewNestedScrollEnable'>执行</button>
+</li> -->
+
+<!-- <li>
+显示我的客服按钮 faqShowUdeskEntry<button id='faqShowUdeskEntry'>执行</button>
+</li> -->
+
+<!-- <li>
+存储kv数据 memData<button id='memData'>执行</button>
+</li> -->
+
+<!-- <li>
+跳转到具体的试卷 openSpecificTestPaper<button id='openSpecificTestPaper'>执行</button>
+</li> -->
+
+<!-- <li>
+跳转到试卷首页 openTestPaperHomePage<button id='openTestPaperHomePage'>执行</button>
+</li> -->
+
+<!-- <li>
+拍照导流到文言文搜索结果页 goToClassicalChineseSearch<button id='goToClassicalChineseSearch'>执行</button>
+</li> -->
+
+<!-- <li>
+搜索结果无结果跳转到反馈页面 goToFeedback<button id='goToFeedback'>执行</button>
+</li> -->
+
 </ol>
 
 <script>
@@ -1248,7 +1361,262 @@ document.querySelector('#scanQRCode').onclick = function() {
 		});
 }
 
+// document.querySelector('#notice').onclick = function() {
+// 	hybridApi.exec('notice',
+// 		{
+// 			  byUser: 0,
+//       		  tid: '338173507',
+//      		  choice: '1',
+//      		  rightAnswer: '2',
+//           	  isRight: '0'
 
+// 		},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
+
+document.querySelector('#flipPage').onclick = function() {
+	hybridApi.exec('flipPage',
+		{
+			pageNum: 0,
+			type: 11,
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#getPractiseResult').onclick = function() {
+	hybridApi.exec('getPractiseResult',
+		{
+			tid: '338173507',
+			// difficulty: 'hard',
+			// qType: '1'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#closeAndOpenWindow').onclick = function() {
+	hybridApi.exec('closeAndOpenWindow',
+		{
+			url: 'http://qatest18.suanshubang.com/activity/donation/index',
+			hideNav: 1
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#collectionLoadMore').onclick = function() {
+	hybridApi.exec('collectionLoadMore',
+		{
+			 courseId: 2,
+			 sourceId: 1,
+			 tagIds: '10',
+			 lastFavorId: '10',
+			 pn: 0
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+	hybridApi.exec('toast', {text: '调用成功'});
+}
+
+document.querySelector('#learnByAnalogy').onclick = function() {
+	hybridApi.exec('learnByAnalogy',
+		{
+			 tid:'338173507'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#goToLiveTab').onclick = function() {
+	hybridApi.exec('goToLiveTab',
+		{
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#tutorpay').onclick = function() {
+	hybridApi.exec('tutorpay',
+		{
+			itemid: '10',
+			from: 'test',
+			payExtra: 'none',
+			paySouce:0,
+			isTutor: 0
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#chatShowDetail').onclick = function() {
+	hybridApi.exec('chatShowDetail',
+		{
+			detailUrl: 'http://www.baidu.com'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#completeAppeal').onclick = function() {
+	hybridApi.exec('completeAppeal',
+		{},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#searchResultNativeScroll').onclick = function() {
+	var ran = Math.random(0, 1);
+	var enable = true;
+	var text = '已开启';
+	if (ran >= 0.5) {
+		enable = false;
+		text = '已禁用';
+	}
+	hybridApi.exec('searchResultNativeScroll',
+		{
+			enable: enable,
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+	hybridApi.exec('toast', {text: text});
+}
+
+document.querySelector('#openTinyCoursePaper').onclick = function() {
+	hybridApi.exec('openTinyCoursePaper',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#openTinyCourseTestPaper').onclick = function() {
+	hybridApi.exec('openTinyCourseTestPaper',
+		{
+			examId: '652877'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+document.querySelector('#openAnswerPaperProcess').onclick = function() {
+	hybridApi.exec('openAnswerPaperProcess',
+		{
+			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+			fromType: 0,
+			difficulty: 1,
+			comeFrom: 'test'
+		},
+		function(res) {
+			alert(JSON.stringify(res));
+		});
+}
+
+// document.querySelector('#subjectDetail').onclick = function() {
+// 	hybridApi.exec('subjectDetail',
+// 		{
+// 			currentUrl: 'http://qatest18.suanshubang.com/activity/donation/index',
+// 			courseId: 2,
+// 			lessonId: 5,
+// 			// url: 'http'
+// 		});
+// }
+
+// document.querySelector('#exportPdf').onclick = function() {
+// 	hybridApi.exec('exportPdf');
+// }
+
+// document.querySelector('#feLogcat').onclick = function() {
+// 	hybridApi.exec('feLogcat');
+// }
+
+// document.querySelector('#liveKeyBoardHideHeight').onclick = function() {
+// 	hybridApi.exec('liveKeyBoardHideHeight');
+// }
+
+// document.querySelector('#webviewIndex').onclick = function() {
+// 	hybridApi.exec('webviewIndex',
+// 		{},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
+
+document.querySelector('#picSearchResultGuide').onclick = function() {
+	hybridApi.exec('picSearchResultGuide');
+}
+
+// document.querySelector('#getSid').onclick = function() {
+// 	hybridApi.exec('getSid',
+// 		{},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
+
+document.querySelector('#addFeedback').onclick = function() {
+	hybridApi.exec('addFeedback',
+		{
+			feed_url: 'http://www.zybang.com'
+		});
+}
+
+// document.querySelector('#memData').onclick = function() {
+// 	hybridApi.exec('memData',
+// 		{
+// 			op: 'set',
+// 			g: 'false',
+// 			k: 'key1'
+// 			v: 'value1'
+// 		},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
+
+// document.querySelector('#openSpecificTestPaper').onclick = function() {
+// 	hybridApi.exec('openSpecificTestPaper',
+// 		{
+// 			examId: '0cf0b6f12a06c28d2d7af574e652e16c',
+// 			sourceId: 1
+// 		});
+// }
+
+// document.querySelector('#openTestPaperHomePage').onclick = function() {
+// 	hybridApi.exec('openTestPaperHomePage',
+// 		{});
+// }
+
+// document.querySelector('#goToClassicalChineseSearch').onclick = function() {
+// 	hybridApi.exec('goToClassicalChineseSearch',
+// 		{
+// 			searchKeyWord: '口技'
+// 		});
+// }
+
+// document.querySelector('#goToFeedback').onclick = function() {
+// 	hybridApi.exec('goToFeedback',
+// 		{
+// 			sid: 'b96181e8d67fe3073ba2653524c6d1c3ba956842efae4b01',
+// 			tid: '367354808'
+// 		});
+// }
 </script>
 </body>
 </html>

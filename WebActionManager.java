@@ -74,40 +74,40 @@ public class WebActionManager {
     //获取公共参数
     // private static final String ACTION_COMMON = "common";
     //回答错误时通知客户端计时接口
-    private static final String ACTION_NOTICE = "notice";
+    // private static final String ACTION_NOTICE = "notice";
     //练习中的跳转到下一页或者结果页,练习中的跳转到指定页
-    private static final String ACTION_FLIP_PAGE = "flipPage";
+    // private static final String ACTION_FLIP_PAGE = "flipPage";
     //获取地理位置
     // private static final String ACTION_LOCATION = "getLocation";
     //通知用户的操作，选择了哪个答案
-    private static final String ACTION_GET_USERANSWER = "getPractiseResult";
+    // private static final String ACTION_GET_USERANSWER = "getPractiseResult";
     //在新页面打开一个WebActivity
     // private static final String ACTION_OPEN_WINDOW = "openWindow";
     //在新页面打开一个WebActivity
-    private static final String ACTION_CLOSE_AND_OPENWINDOW = "closeAndOpenWindow";
+    // private static final String ACTION_CLOSE_AND_OPENWINDOW = "closeAndOpenWindow";
     //在检索结果页面的webview显示UGC入口
     // private static final String ACTION_UGC = "ugc";
-    private static final String ACTION_SHOW_UGC = "showUgc";
+    // private static final String ACTION_SHOW_UGC = "showUgc";
     //收藏本Item点击
-    private static final String ACTION_COLLECT_ITEMCLICK = "click";
+    // private static final String ACTION_COLLECT_ITEMCLICK = "click";
     //收藏本加载更多
     // private static final String ACTION_COLLECT_LOADMORE = "loadmore";
     //新版错题本加载更多
-    private static final String ACTION_COLLECTION_LOAD_MORE = "collectionLoadMore";
+    // private static final String ACTION_COLLECTION_LOAD_MORE = "collectionLoadMore";
     //收藏本空回调
     // private static final String ACTION_COLLECT_EMPTY = "loadempty";
     //售后的WebActivity页面的跳转
     // private static final String ACTION_AFTERSALE_JUMP = "jumptolist";
     //获取用户信息
     // private static final String ACTION_GET_USERINFO = "getuserinfo";
-    //检索结果页获取巩固练习数量
-    private static final String ACTION_EXERCISE_CNT = "exerciseCnt";
+    // 检索结果页获取巩固练习数量
+    // private static final String ACTION_EXERCISE_CNT = "exerciseCnt";
     //检索结果页调整巩固练习
-    private static final String ACTION_GO_TO_EXERCISE = "goToExercise";
+    // private static final String ACTION_GO_TO_EXERCISE = "goToExercise";
     //跳举一反三
-    private static final String ACTION_LEARN_BY_ANALOGY = "learnByAnalogy";
+    // private static final String ACTION_LEARN_BY_ANALOGY = "learnByAnalogy";
     // 跳转到直播课的首页
-    private static final String ACTION_GO_TO_LIVE_CLASS = "goToLiveTab";
+    // private static final String ACTION_GO_TO_LIVE_CLASS = "goToLiveTab";
 
     // 取得用户在主live页所选的年级,默认为初中20
     // private static final String ACTION_GET_SELECT_GRADE = "getSelectGrade";
@@ -126,7 +126,7 @@ public class WebActionManager {
     //跳转到我的课程列表页面
     // private static final String ACTION_GO_TO_MY_COURSE_LIST = "goToMyCourseList";
     //新手大礼包任务完成
-    private static final String ACTION_FINISH_GIFT = "finishGift";
+    // private static final String ACTION_FINISH_GIFT = "finishGift";
     //去拍题
     // private static final String ACTION_OPEN_CAMERA = "openCamera";
 
@@ -135,13 +135,13 @@ public class WebActionManager {
     //调起native拨号
     // private static final String ACTION_DIAL = "dial";
     //包月支付action
-    private static final String ACTION_MONTH_PAY = "tutorpay";
+    // private static final String ACTION_MONTH_PAY = "tutorpay";
     //留言页面右上角显示详情页按钮
-    private static final String ACTION_CHAT_SHOW_DETAIL = "chatShowDetail";
+    // private static final String ACTION_CHAT_SHOW_DETAIL = "chatShowDetail";
     //跳转到绑定手机号页面
     // private static final String ACTION_GO_BIND_PHONE = "goBindPhone";
     //申诉完成
-    private static final String ACTION_COMPLETE_APPEAL = "completeAppeal";
+    // private static final String ACTION_COMPLETE_APPEAL = "completeAppeal";
 
     //展示web页里的大图
     // private static final String ACTION_SHOW_WEB_LARGE_PICTURE = "showWebPicture";
@@ -153,7 +153,7 @@ public class WebActionManager {
     // private static final String ACTION_SWAP_BACK = "swapBack";
 
     //检索结果页pager滑动是否禁用
-    private static final String ACTION_SEARCH_RESULT_NATIVE_SCROLL = "searchResultNativeScroll";
+    // private static final String ACTION_SEARCH_RESULT_NATIVE_SCROLL = "searchResultNativeScroll";
 
     //进入订单
     // private static final String ACTION_OPEN_SALE_LIST = "openSalelist";
@@ -162,7 +162,7 @@ public class WebActionManager {
     // private static final String ACTION_OPEN_CACHE_LIST = "openCachelist";
 
     //SearchResult 页面缩放动作开始
-    private static final String ACTION_SEARCH_RESULT_ZOOM_START = "searchResultZoomStart";
+    // private static final String ACTION_SEARCH_RESULT_ZOOM_START = "searchResultZoomStart";
     // SearchResult页面跳到知识卡片的action
     // private static final String ACTION_SEARCH_RESULT_TO_KNOWLEDGE_CARD = "knowledgeCard";
     // 一对一辅导跳转到拍题老师列表页
@@ -190,32 +190,32 @@ public class WebActionManager {
     //直播课，fe索要目前选中的题目答案
     // private static final String ACTION_HOMEWORK_GET_RESULT = "homeworkGetResultAction";
     //基础业务 习题本列表页，点击某道题跳转到题目详情页面
-    private static final String ACTION_LIVE_EXERCISE_BOOK_GO_DETAIL="subjectDetail";
+    // private static final String ACTION_LIVE_EXERCISE_BOOK_GO_DETAIL="subjectDetail";
     //基础业务 习题本列表页，点击某道题跳转到PDF预览下载页面
-    private static final String ACTION_LIVE_EXERCISE_BOOK_GO_PDF="exportPdf";
+    // private static final String ACTION_LIVE_EXERCISE_BOOK_GO_PDF="exportPdf";
     //全屏
     //课后作业是否wifi
     //fe日志action
-    private static final String ACTION_FE_LOGCAT="feLogcat";
-    private static final String ACTION_LIVE_LESSON_KEY_BORARD_HIGHT="liveKeyBoardHideHeight";
+    // private static final String ACTION_FE_LOGCAT="feLogcat";
+    // private static final String ACTION_LIVE_LESSON_KEY_BORARD_HIGHT="liveKeyBoardHideHeight";
     //跳转Activity统一action
-    private static final String ACTION_START_ACTIVITY = "startActivity";
+    // private static final String ACTION_START_ACTIVITY = "startActivity";
     //调用Native登录操作,使用于邦邦商城
     // private static final String ACTION_LOGIN_MALL = "loginMall";
-    private static final String ACTION_WEB_VIEW_INDEX = "webviewIndex";
-    private static final String ACTION_PIC_SEARCH_RESULT_GUIDE = "picSearchResultGuide";
+    // private static final String ACTION_WEB_VIEW_INDEX = "webviewIndex";
+    // private static final String ACTION_PIC_SEARCH_RESULT_GUIDE = "picSearchResultGuide";
     // private static final String ACTION_UNIVERSAL_LAUNCH_PAGE = "universalLaunchPage";
-    private static final String ACTION_GET_SID = "getSid";
+    // private static final String ACTION_GET_SID = "getSid";
     // private static final String ACTION_FEEDBACK = "feedback";
     // private static final String ACTION_DOWNLOAD_PEN = "downLoadPenData";//下载笔迹数据解析成JSON传给fe
     //跳转EvaluationActivity
     // private static final String ACTION_GOTO_EVALUATION = "goEvaluation";
     //在fe页面增加投诉按钮
-    private static final String ACTION_ADD_FEEDBACK = "addFeedback";
+    // private static final String ACTION_ADD_FEEDBACK = "addFeedback";
     // 调微博分享文字接口，用于"话题"
     // private static final String ACTION_WEIBO_SHARE = "weiboShare";
     // 视频回放页菜单弹出
-    private static final String ACTION_PLAYBACK_MENU = "playbackMenu";
+    // private static final String ACTION_PLAYBACK_MENU = "playbackMenu";
     // 隐藏输入法框
     // private static final String ACTION_HIDE_INPUT = "hideInput";
     // 设置页面随输入法伸缩
@@ -225,14 +225,14 @@ public class WebActionManager {
     //feed details 判断linkurl 是不是 null
     // private static final String ACTION_IS_SHOWVIDEOSINARTICLE= "isShowVideosInArticle";
     //禁止/恢复端上页面随嵌套webview滚动的响应开关Action
-    private static final String ACTION_MIXEDPAGEWEBVIEWNESTEDSCROLLENABLE= "mixedPageWebviewNestedScrollEnable";
+    // private static final String ACTION_MIXEDPAGEWEBVIEWNESTEDSCROLLENABLE= "mixedPageWebviewNestedScrollEnable";
     
     //作文大赛投稿的action
     // private static final String ACTION_COMPOSITION_GAME_CONTRIBUTE = "contributeComposition";
     //作文大赛出书的action
     // private static final String ACTION_COMPOSITION_PUBLISH = "publishComposition";
     //作文大赛投稿时完善个人信息
-    private static final String ACTION_COMPOSITION_COMPLETE_INFO = "completeInfo";
+    // private static final String ACTION_COMPOSITION_COMPLETE_INFO = "completeInfo";
     //fe调用手机自带浏览器 打开网页的action
     // private static final String ACTION_OPEN_WEB_PAGER = "openWebPager";
     //跳转到新版我的老师列表页
@@ -246,7 +246,7 @@ public class WebActionManager {
     //显示联系我们对话框
     // private static final String ACTION_SHOW_CONTACT_US = "faqShowContactUs";
     //显示我的客服按钮
-    private static final String ACTION_SHOW_UDESK_ENTRY = "faqShowUdeskEntry";
+    // private static final String ACTION_SHOW_UDESK_ENTRY = "faqShowUdeskEntry";
     //显示右上角辅导记录按钮
     // private static final String ACTION_SHOW_SINGLE_TEACHER_ORDER = "faqShowTeacherOrder";
     //显示右上角专属老师更换按钮
@@ -317,13 +317,13 @@ public class WebActionManager {
     //录播课售卖
     // private static final String ACTION_PLAY_LIVE_VIDEO = "playLiveVideo";
     //微课跳转到试卷详情页
-    private static final String ACTION_TINY_COURSE_PAPER = "openTinyCoursePaper";
+    // private static final String ACTION_TINY_COURSE_PAPER = "openTinyCoursePaper";
     //微课测试包跳转到试卷详情页
-    private static final String ACTION_TINY_COURSE_PAPER_TEST = "openTinyCourseTestPaper";
+    // private static final String ACTION_TINY_COURSE_PAPER_TEST = "openTinyCourseTestPaper";
     //跳转到试卷详情页
-    private static final String ACTION_ANSWER_PAPER_TEST = "openAnswerPaperProcess";
+    // private static final String ACTION_ANSWER_PAPER_TEST = "openAnswerPaperProcess";
     //同步练习试卷结果页后退
-    private static final String ACTION_SYNC_PRACTICE_EXIT = "syncPracticeExit";
+    // private static final String ACTION_SYNC_PRACTICE_EXIT = "syncPracticeExit";
     //请求Feed流广告
     // private static final String ACTION_FETCH_FEED_AD = "fetchFeedAd";
     //展现Feed流广告
@@ -448,7 +448,7 @@ public class WebActionManager {
     //课中签到
     // private static final String ACTION_PLAY_AUDIO = "playAudio";
     //纯净播放器
-    private static final String ACTION_PLAY_PURE_VIDEO = "playPureVideo";
+    // private static final String ACTION_PLAY_PURE_VIDEO = "playPureVideo";
 
     //倍速播放器
     // private static final String ACTION_MULTIPLE_PLAY = "platformRTCVideo";
