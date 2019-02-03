@@ -276,23 +276,23 @@ public class WebActionManager {
     //在新页面打开一个LiveOrderWebActivity
     // private static final String ACTION_OPEN_ORDER_WINDOW = "openOrderWindow";
     //存储kv数据
-    private static final String ACTION_MEM_DATA = "memData";
+    // private static final String ACTION_MEM_DATA = "memData";
     //是否禁止back键（只能用于WebActivity中）
     // private static final String ACTION_FORBID_BACK = "forbidBack";
-    //跳转到具体的试卷
-    private static final String ACTION_GO_TO_SPECIFIC_TEST_PAPER = "openSpecificTestPaper";
+    // 跳转到具体的试卷
+    // private static final String ACTION_GO_TO_SPECIFIC_TEST_PAPER = "openSpecificTestPaper";
     //跳转到试卷首页
-    private static final String ACTION_GO_TO_TEST_PAPER_HOME_PAGE = "openTestPaperHomePage";
+    // private static final String ACTION_GO_TO_TEST_PAPER_HOME_PAGE = "openTestPaperHomePage";
     //跳转到称号修改页面
     // private static final String ACTION_GO_TO_USER_TITLE = "goToUserTitleAction";
     //跳转到用户资料修改页面
     // private static final String ACTION_GO_TO_USER_PROFILE = "goToUserProfile";
     //拍照导流到文言文搜索结果页
-    private static final String ACTION_GO_TO_CLASSICAL_CHINESE_SEARCH = "goToClassicalChineseSearch";
+    // private static final String ACTION_GO_TO_CLASSICAL_CHINESE_SEARCH = "goToClassicalChineseSearch";
     //通用跳转的action
     // private static final String ACTION_APP_JUMP_PROTOCOL = "APPJumpProtocol";
     //搜索结果无结果跳转到反馈页面
-    private static final String ACTION_GO_TO_SEARCH_RESULT_FEEDBACK = "goToFeedback";
+    // private static final String ACTION_GO_TO_SEARCH_RESULT_FEEDBACK = "goToFeedback";
     //跳转到平台通用支付页
     // private static final String ACTION_PLATFORM_PAY = "platformPay";
 

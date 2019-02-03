@@ -376,9 +376,9 @@ feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isSho
 跳转到个人主页jumpToUserCard<button id='jumpToUserCard'>执行</button>
 </li>
 
-<li>
+<!-- <li>
 *跳转到阅读世界jumpReadWorld<button id='jumpReadWorld'>执行</button>
-</li>
+</li> -->
 
 <li>
 跳转到搜索题目详情页 goSearchResult<button id='goSearchResult'>执行</button>
@@ -400,9 +400,9 @@ feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isSho
 倍速播放器platformRTCVideo<button id='platformRTCVideo'>执行</button>
 </li> -->
 
-<li>
+<!-- <li>
 *纯净播放器 playPureVideo<button id='playPureVideo'>执行</button>
-</li>
+</li> -->
 
 <li>
 问题详情页questiondetail<button id='questiondetail'>执行</button>
@@ -420,9 +420,9 @@ feed details 判断linkurl 是不是 null isShowVideosInArticle<button id="isSho
 questionCollectState<button id='questionCollectState'>执行</button>
 </li>
  -->
-<li>
+<!-- <li>
 *nlog<button id='nlog'>执行</button>
-</li>
+</li> -->
 
 <li>
 reportEntranceOldLogin<button id='reportEntranceOldLogin'>执行</button>
@@ -432,17 +432,17 @@ reportEntranceOldLogin<button id='reportEntranceOldLogin'>执行</button>
 扫码回传给FE页面 scanQRCode<button id='scanQRCode'>执行</button>
 </li>
 
-<li>
+<!-- <li>
 *回答错误时通知客户端计时接口 notice<button id='notice'>执行</button>
-</li>
+</li> -->
 
 <li>
 练习中的跳转到下一页或者结果页,练习中的跳转到指定页 flipPage<button id='flipPage'>执行</button>
 </li>
 
-<li>
-通知用户的操作，选择了哪个答案 getPractiseResult<button id='getPractiseResult'>执行</button>
-</li>
+<!-- <li>
+*通知用户的操作，选择了哪个答案 getPractiseResult<button id='getPractiseResult'>执行</button>
+</li> -->
 
 <li>
 在新页面打开一个WebActivity closeAndOpenWindow<button id='closeAndOpenWindow'>执行</button>
@@ -452,9 +452,9 @@ reportEntranceOldLogin<button id='reportEntranceOldLogin'>执行</button>
 新版错题本加载更多 collectionLoadMore<button id='collectionLoadMore'>执行</button>
 </li>
 
-<li>
-检索结果页获取巩固练习数量 exerciseCnt<button id='exerciseCnt'>执行</button>
-</li>
+<!-- <li>
+*检索结果页获取巩固练习数量 exerciseCnt<button id='exerciseCnt'>执行</button>
+</li> -->
 
 <li>
 跳举一反三 learnByAnalogy<button id='learnByAnalogy'>执行</button>
@@ -548,9 +548,9 @@ fe日志action feLogcat<button id='feLogcat'>执行</button>
 拍照导流到文言文搜索结果页 goToClassicalChineseSearch<button id='goToClassicalChineseSearch'>执行</button>
 </li>
 
-<li>
-搜索结果无结果跳转到反馈页面 goToFeedback<button id='goToFeedback'>执行</button>
-</li>
+<!-- <li>
+*搜索结果无结果跳转到反馈页面 goToFeedback<button id='goToFeedback'>执行</button>
+</li> -->
 
 </ol>
 
@@ -606,7 +606,7 @@ document.querySelector("#is_login").onclick = function(){
 	hybridApi.exec("is_login",
 		{},
 		function(result){
-			hybridApi.exec("toast",{text:result.isLogin+""});
+			alert(JSON.stringify(result));
 			});
 }
 
@@ -676,11 +676,11 @@ document.querySelector("#playVideoHint").onclick = function(){
 }
 
 document.querySelector("#toast").onclick = function(){
-	hybridApi.exec("toast",{text:"这工作真他妈傻逼"});
+	hybridApi.exec("toast",{text:"我是text"});
 }
 
 document.querySelector('#dial').onclick = function() {
-	hybridApi.exec('dial', {phone:"18804627884"});
+	hybridApi.exec('dial', {phone:"13100000050"});
 }
 
 document.querySelector('#copyToClipboard').onclick = function() {
@@ -695,7 +695,7 @@ document.querySelector('#copyToClipboard').onclick = function() {
 document.querySelector("#share").onclick = function(){
 	hybridApi.exec("share",
 		{
-			share_text:"我是分享文字，不服么",
+			share_text:"我是分享文字",
 			share_text_weibo:"这是缀在分享文字后给微博额外添加的文字",
 			share_img:"https://yy-s.zuoyebang.cc/static/drawbook/theme/booklist5-up.png",
 			share_url:"http://wapiknow.baidu.com"
@@ -987,11 +987,11 @@ document.querySelector('#openWebPager').onclick = function() {
 }
 
 document.querySelector('#rankInfo').onclick = function() {
-	hybridApi.exec('rankInfo', {info: '我是你爸爸'});
+	hybridApi.exec('rankInfo', {info: '我是内容'});
 }
 
 document.querySelector('#tutorpack').onclick = function() {
-	hybridApi.exec('tutorpack', {from: '来自你爸爸', isClose: 1});
+	hybridApi.exec('tutorpack', {from: '来自我', isClose: 1});
 }
 
 document.querySelector('#faqShowComplaint').onclick = function() {
@@ -999,7 +999,11 @@ document.querySelector('#faqShowComplaint').onclick = function() {
 }
 
 document.querySelector('#faqShowContactUs').onclick = function() {
-	hybridApi.exec('faqShowContactUs');
+	hybridApi.exec('faqShowContactUs',
+		{
+			number: '13100000050',
+			message: 'you reached contact'
+		});
 }
 
 document.querySelector('#faqShowUfo').onclick = function() {
@@ -1042,12 +1046,12 @@ document.querySelector('#show_share').onclick = function() {
 	hybridApi.exec('show_share',
 		{
 			is_share: true,
-			share_title: '我是你标题爸爸',
-			share_text: '我是你内容爸爸',
-			share_text_weibo: '我是你微博内容爸爸',
+			share_title: '我是标题',
+			share_text: '我是内容',
+			share_text_weibo: '我是微博内容',
 			share_img: 'https://www.zybang.com/static/drawbook/scene/1-2.png',
 			share_url: 'http://qatest18.suanshubang.com/activity/donation/index',
-			share_origin: '来自你爸爸',
+			share_origin: '来自我',
 			share_type: [0,1,2,3]
 		},
 		function(res) {
@@ -1248,9 +1252,9 @@ document.querySelector('#jumpToUserCard').onclick = function() {
 	hybridApi.exec('jumpToUserCard');
 }
 
-document.querySelector('#jumpReadWorld').onclick = function() {
-	hybridApi.exec('jumpReadWorld',{index: 1});
-}
+// document.querySelector('#jumpReadWorld').onclick = function() {
+// 	hybridApi.exec('jumpReadWorld',{index: 1});
+// }
 
 document.querySelector('#goSimilarDetail').onclick = function() {
 	hybridApi.exec('goSimilarDetail',
@@ -1286,16 +1290,16 @@ document.querySelector('#postNotificationAction').onclick = function() {
 // 		});
 // }
 
-document.querySelector('#playPureVideo').onclick = function() {
-	hybridApi.exec('playPureVideo',
-		{
-			sourceUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
-			videoName: 'test1',
-			videoPlayKey: 'i am key',
-			isEncryption: 'false',
-			from: 'search'
-		});
-}
+// document.querySelector('#playPureVideo').onclick = function() {
+// 	hybridApi.exec('playPureVideo',
+// 		{
+// 			sourceUrl: 'https://bd-s.zuoyebang.cc/zyb-181262.mp4',
+// 			videoName: 'test1',
+// 			videoPlayKey: '10',
+// 			isEncryption: 'false',
+// 			from: 'search'
+// 		});
+// }
 
 document.querySelector('#questiondetail').onclick = function() {
 	hybridApi.exec('questiondetail',
@@ -1342,13 +1346,22 @@ document.querySelector('#reportEntranceOldLogin').onclick = function() {
 	hybridApi.exec('reportEntranceOldLogin');
 }
 
-document.querySelector('#nlog').onclick = function() {
-	hybridApi.exec('nlog',
-		{
-			name: '测试1',
-			data: [1,2,3]
-		});
-}
+// document.querySelector('#nlog').onclick = function() {
+// 	hybridApi.exec('nlog',
+// 		{
+// 			name: 'superExamBuy',
+// 			data: {
+// 				from: '未知',
+// 				type: 'free_button_click',
+// 				id: 2001,
+// 				uid: 2000017206
+// 			}
+// 		},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		}
+// 		;
+// }
 
 document.querySelector('#scanQRCode').onclick = function() {
 	hybridApi.exec('scanQRCode',
@@ -1388,17 +1401,17 @@ document.querySelector('#flipPage').onclick = function() {
 		});
 }
 
-document.querySelector('#getPractiseResult').onclick = function() {
-	hybridApi.exec('getPractiseResult',
-		{
-			tid: '338173507',
-			// difficulty: 'hard',
-			// qType: '1'
-		},
-		function(res) {
-			alert(JSON.stringify(res));
-		});
-}
+// document.querySelector('#getPractiseResult').onclick = function() {
+// 	hybridApi.exec('getPractiseResult',
+// 		{
+// 			tid: '338173507',
+// 			difficulty: 'hard',
+// 			qType: 1
+// 		},
+// 		function(res) {
+// 			alert(JSON.stringify(res));
+// 		});
+// }
 
 document.querySelector('#closeAndOpenWindow').onclick = function() {
 	hybridApi.exec('closeAndOpenWindow',
@@ -1643,7 +1656,7 @@ document.querySelector('#goToClassicalChineseSearch').onclick = function() {
 // 	hybridApi.exec('goToFeedback',
 // 		{
 // 			sid: 'b96181e8d67fe3073ba2653524c6d1c3ba956842efae4b01',
-// 			tid: '367354808'
+// 			tid: '202080384'
 // 		});
 // }
 </script>
