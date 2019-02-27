@@ -1,0 +1,30 @@
+-   config:
+        name: testcase description
+        variables: {}
+        base_url: http://qatest18.suanshubang.com
+-   test:
+        name: query bookcard
+        request:
+            headers:
+                Content-Type: application/x-www-form-urlencoded
+                User-Agent: python-requests/2.18.4
+                app_version: 2.8.6
+                device_sn: FwgRiO7CNA50DSU
+                os_platform: Android
+            cookies:
+                ZYBUSS: R2cbjbRaSu7YW7lEd_nra2QQB8vsUr2gdRAIXeY8TDo-tNI9zMOxLW0ADLVr9IAv
+            json:
+                uid: 2000017206
+                skip: rdqa
+            method: POST
+            url: /macan/user/userinfo
+        validate:
+        -   eq:
+            - json.errNo
+            - 0
+        -   eq:
+            - json.errstr
+            - success
+        -   eq:
+            - json.data.bookcard
+            - 49989
